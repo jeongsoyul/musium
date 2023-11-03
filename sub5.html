@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약하기</title>
+    <link rel="stylesheet" href="./css/CalendarPicker.style.css">
+    <link rel="stylesheet" href="./css/sub5.css">
+    <script src="./script/CalendarPicker.js"></script>
+</head>
+<body>
+    <header>
+        <div class="h_inner">
+            <h1>
+                <a href="./index.html">
+                    <img src="./img/logo.svg" alt="logo">
+                    <span>수풍석뮤지엄</span>
+                </a>
+            </h1>
+            <ul class="menu">
+                <li><a href="./sub1.html">박물관소개</a></li>
+                <li><a href="./sub3.html">공지사항</a></li>
+                <li><a href="./sub4.html">ITAMI JUN</a></li>
+                <li><button type="button" onclick="location.href='sub5.html'">예약하기</button></li>
+            </ul>
+        </div>
+    </header>
+        <main>
+        <section class="mainbg">
+            <h2 hidden>mainBg</h2>
+            <div class="title">
+                <ul>
+                    <li class="a"><a href="./sub5.html">예약하기</a></li>
+                    <li class="b"><a href="#">내 예약 현황</a></li>
+                </ul>
+            </div>
+            <figure>
+                <img src="./img/sub5_Bg.png" alt="s5_Bg">
+            </figure>
+        </section>
+        <section class="con1">
+            <div class="title">
+                <h2>예약일 선택</h2>
+            </div>
+            <div id="showcase-wrapper">
+                <div id="myCalendarWrapper">
+                    
+                </div>
+                <div id="example">
+                    <h3 hidden>currentValue:
+                        <p id="current-date" hidden></p>
+                    </h3>
+                    <h3 hidden>currentValue.getDay():
+                        <p id="current-day" hidden></p>
+                    </h3>
+                    <h4>선택된 예약일
+                        <p id="current-datestring"></p>
+                    </h4>
+                </div>
+            </div>
+        </section>
+        <section class="con2">
+            <h2 hidden>con2</h2>
+            <div class="numberCont">
+                <div class="s_title">
+                    <h3>예약인원</h3>
+                </div>
+                <ul>
+                    <li>
+                        <div class="text">
+                           <p>성인(일반) 이용권 </p> 
+                        </div>
+                        <div class="countBox">
+                            <div class="ip">
+                                <input type="tel" value="1" id="inwon01" name="inwon01" readonly>
+                            </div>
+                            <div class="btn">
+                                <a href="#" class="numUp">
+                                    <img src="./img/up.svg" alt="up">
+                                </a>
+                                <a href="#" class="numDown">
+                                    <img src="./img/down.svg" alt="down">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text">
+                           <p>성인(장애인) 이용권 50% 할인 </p> 
+                        </div>
+                        <div class="countBox">
+                            <div class="ip">
+                                <input type="tel" value="0" id="inwon02" name="inwon02" readonly>
+                            </div>
+                            <div class="btn">
+                                <a href="#" class="numUp">
+                                    <img src="./img/up.svg" alt="up">
+                                </a>
+                                <a href="#" class="numDown">
+                                    <img src="./img/down.svg" alt="down">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text">
+                           <p>초등학생(일반) 이용권 </p> 
+                        </div>
+                        <div class="countBox">
+                            <div class="ip">
+                                <input type="tel" value="0" id="inwon03" name="inwon03" readonly>
+                            </div>
+                            <div class="btn">
+                                <a href="#" class="numUp">
+                                    <img src="./img/up.svg" alt="up">
+                                </a>
+                                <a href="#" class="numDown">
+                                    <img src="./img/down.svg" alt="down">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text">
+                           <p>초등학생(장애인) 이용권 50% 할인 </p> 
+                        </div>
+                        <div class="countBox">
+                            <div class="ip">
+                                <input type="tel" value="0" id="inwon04" name="inwon04" readonly>
+                            </div>
+                            <div class="btn">
+                                <a href="#" class="numUp">
+                                    <img src="./img/up.svg" alt="up">
+                                </a>
+                                <a href="#" class="numDown">
+                                    <img src="./img/down.svg" alt="down">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="total">
+                <p>
+                    총 금액 : <strong>30,000</strong>원
+                </p>
+            </div>
+        </section>
+            <div class="centerBtn">
+            <button type="button">
+               <strong>예약하기</strong>
+               <img src="./img/r_arrow.svg" alt="r_a">
+            </button>    
+            </div>
+    </main>
+        <footer>
+            <div class="f_inner">
+                <div class="f_1st">
+            <a href="#" class="flogo">
+                <img src="./img/flogo.svg" alt="f_l">
+            </a>
+            <div class="f_menu">
+                <ul>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="#">이메일 무단 수집거부</a></li>
+                    <li><a href="#">예약안내</a></li>
+                    <li><a href="#">오시는 길</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="f_2nd">
+            <div class="text">
+                <p>주소: 제주 서귀포시 안덕면 산록남로 762번길 79 (우 : 63525)<br>
+                    상호명 : 비오토피아 주민회<br>
+                    대표번호 : T 010-7145-2366<br>
+                    E-Mail : biotopia2012@daum.net</p>
+            </div>
+            <div class="icon">
+                <a href="#">
+                    <img src="./img/Vector.svg" alt="v1">
+                </a>
+                <a href="#">
+                    <img src="./img/naver.svg" alt="v2">
+                </a>
+                <a href="#">
+                    <img src="./img/Vector-1.svg" alt="v3">
+                </a>
+            </div>
+        </div>
+            <div class="copy">
+                <span>Copyright 2020. biotopiamuseum Co.,Ltd. All Rights Reserved.</span>
+            </div>
+        </div>
+        </footer>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/calendarpickerjs@1.2.0"></script>
+<script>
+    const nextYear = new Date().getFullYear() + 1;
+    const myCalender = new CalendarPicker('#myCalendarWrapper', {
+        // If max < min or min > max then the only available day will be today.
+        min: new Date(),
+        max: new Date(nextYear, 10), // NOTE: new Date(nextYear, 10) is "Nov 01 <nextYear>"
+        locale: 'en-US', // Can be any locale or language code supported by Intl.DateTimeFormat, defaults to 'en-US'
+        showShortWeekdays: false // Can be used to fit calendar onto smaller (mobile) screens, defaults to false
+    });
+
+    const currentDateElement = document.getElementById('current-date');
+    currentDateElement.textContent = myCalender.value;
+
+    const currentDayElement = document.getElementById('current-day');
+    currentDayElement.textContent = myCalender.value.getDay();
+
+    const currentToDateString = document.getElementById('current-datestring');
+    currentToDateString.textContent = myCalender.value.toDateString();
+
+    myCalender.onValueChange((currentValue) => {
+        currentDateElement.textContent = currentValue;
+        currentDayElement.textContent = currentValue.getDay();
+        currentToDateString.textContent = currentValue.toDateString();
+
+        console.log(`The current value of the calendar is: ${currentValue}`);
+    });
+</script>

@@ -25,11 +25,11 @@
             banner.fadeIn()
             btn.find("span").css({backgroundColor:'#fff'});
             $(".h_inner h1 img").attr('src','./img/flogo.svg')
-            $(".h_inner h1 img").css({width:'200px'})
+            // $(".h_inner h1 img").css({width:'182px'})
         }else{
             banner.fadeOut()
             btn.find("span").css({backgroundColor:'#000'});
-            $(".h_inner h1 img").attr('src','./img/logo.svg')
+            $(".h_inner h1 img").attr('src','./img/h1Logo_b.png')
         }
     });      
       
