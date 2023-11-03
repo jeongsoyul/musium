@@ -1,0 +1,377 @@
+@import url(./reset.css);
+
+@font-face {
+    font-family: kopubBatang_bold;
+    src: url(../font/KoPubWorld\ Batang_Pro\ Bold.otf);
+    /* src: url(../font/KoPubWorld\ Batang_Pro\ Light.otf);
+  src: url(../font/KoPubWorld\ Batang_Pro\ Medium.otf); */
+}
+
+@font-face {
+    font-family: kopubBatang_Light;
+    src: url(../font/KoPubWorld\ Batang_Pro\ Light.otf);
+}
+
+@font-face {
+    font-family: kopubBatang_Medium;
+    src: url(../font/KoPubWorld\ Batang_Pro\ Medium.otf);
+}
+
+@font-face {
+    font-family: maitree;
+    src: url(../font/Maitree/Maitree-Bold.ttf);
+}
+
+@font-face {
+    font-family: maitree_Light;
+    src: url(../font/Maitree/Maitree-Light.ttf);
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: kopubBatang_Light;
+    font-size: 16px;
+}
+
+header {
+  width: 100%;
+  height: 15vh;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  z-index: 99;
+  font-size: 1.1rem;
+  /* 헤더 마우스휠 내리면 사라지고 올리면 나타나게 */
+  transition: .2s linear;
+}
+
+main header h1 span {
+  font-size: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px)
+}
+
+header .h_inner {
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h_inner h1 {
+  width: fit-content;
+  height: fit-content;
+}
+
+.h_inner .menu {
+  font-family: kopubBatang_bold;
+}
+
+
+.h_inner .menu>li {
+  float: left;
+  width: 90px;
+  margin: 0 10px;
+  line-height: 35px;
+  font-weight: bold;
+  margin-top: 25px;
+  text-align: center;
+  position: relative;
+  z-index: 99;
+}
+
+
+/* 밑줄 효과 */
+.h_inner .menu>li:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  display: block;
+  border-bottom: 2px solid #000;
+  transition: all 250ms ease-out;
+  left: 50%;
+  width: 0;
+}
+
+.h_inner .menu>li:not(:last-child):hover::after {
+  transition: all 250ms ease-out;
+  left: 0%;
+  width: 100%;
+}
+
+.h_inner button {
+  /* 예약하기버튼 */
+  border: none;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  border-radius: 100%;
+  margin-left: 20px;
+  margin-top: -25px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 15px;
+  box-shadow: 4px 4px 0 rgb(0 0 0 / 30%);
+  transform: rotate(-15deg);
+  /* hover원래 각도로 */
+}
+.h_inner button:hover {
+  transform: rotate(0deg);
+  transition: .2s;
+}
+
+/* //header */
+
+/* //main */
+.art {
+  width: 100%;
+  height: 100vh;
+  margin: 5% 0;
+}
+
+.art .a_inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.art .title h2 {
+  font-family: maitree;
+  text-decoration: overline;
+  text-decoration-thickness: 4px;
+  font-size: 1.3rem;
+}
+
+.a_inner .allbox {
+  display: flex;
+  justify-content: center;
+}
+
+.a_inner .allbox .text {
+  width: 54%;
+  position: relative;
+}
+
+.a_inner .allbox .name {
+  margin-right: 2%;
+}
+
+.a_inner .allbox .textbox {
+  margin-top: 5%;
+  width: 78%;
+  margin-left: 5%;
+}
+
+.a_inner .allbox .textbox p {
+  font-family: kopubBatang_Medium;
+  margin: 5% 0;
+  font-size: 1.5rem;
+  line-height: 45px;
+}
+
+.a_inner .allbox .textbox span {
+  display: block;
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 900;
+  bottom: 0;
+  right: 5%;
+}
+
+.a_inner .allbox .textbox .icon {
+  position: absolute;
+  right: 15%;
+}
+
+.a_inner .allbox .name p {
+  font-family: maitree;
+  font-size: 6vw;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.a_inner .allbox .name p span {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* //art */
+/* profile */
+.profile{
+    width: 100%;
+}
+.profile .p_inner{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.p_inner .con1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15%;
+}
+.p_inner .con1 .left{
+    width: 50%;
+}
+.p_inner .con1 .right{
+    width: 50%;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+.p_inner .con1 .right span{
+    display: block;
+    margin-bottom:6%;
+    line-height: 26px;
+}
+.p_inner .con2{
+    width: 100%;
+}
+
+.p_inner .con2 .title h2{
+  font-family: maitree;
+    text-decoration: overline;
+  text-decoration-thickness: 4px;
+  font-size: 1.3rem;
+}
+.p_inner .con2 .all{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  margin: 5% 0;
+}
+.p_inner .con2 .all .box{
+  font-family: kopubBatang_Light;
+  line-height: 28px;
+}
+.p_inner .con2 .all .b2,.b4{
+  margin-top: 25%;
+  margin-left: 15%;
+}
+.p_inner .con2 .all .box .s_title{
+  font-family: maitree;
+  /* bold */
+}
+.Architecture{
+  width: 100%;
+  margin: 15% 0;
+}
+.Architecture_inner{
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.Architecture_inner .title h2 {
+  font-family: maitree;
+  text-decoration: overline;
+  text-decoration-thickness: 4px;
+  font-size: 1.3rem;
+}
+.Architecture_inner .all{
+  width: 100%;
+}
+.Architecture_inner .all figure{
+  margin-bottom: 1.5%;
+}
+.Architecture_inner .all .f1{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Architecture_inner .all .f2{
+  width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+/* footer */
+
+footer {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+.f_inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.f_inner .f_1st {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+
+.f_inner .f_1st .flogo {
+  width: fit-content;
+  height: fit-content;
+}
+
+.f_inner .f_1st .flogo img {
+  width: 80%;
+}
+
+.f_inner .f_1st .f_menu {
+  font-family: kopubBatang_bold;
+  width: 50%;
+}
+
+.f_inner .f_1st .f_menu ul li {
+  float: left;
+  margin: 0 5%;
+}
+
+.f_inner .f_2nd {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.f_inner .text {
+  font-size: .8rem;
+  color: #adadad;
+  line-height: 30px;
+}
+
+.f_inner .f_2nd .icon {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+.f_inner .f_2nd .icon a {
+  display: block;
+  width: 25%;
+  margin: 0 3%;
+}
+
+.f_inner .copy {
+  font-size: .7rem;
+  margin-top: 25px;
+  border-top: 1px solid #adadad;
+}
+
+.f_inner .copy span {
+  display: block;
+  font-size: .9rem;
+  color: #adadad;
+  line-height: 45px;
+  float: right;
+}

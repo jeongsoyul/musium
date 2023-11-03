@@ -1,0 +1,441 @@
+@import url(./reset.css);
+
+@font-face {
+    font-family: kopubBatang_bold;
+    src: url(../font/KoPubWorld\ Batang_Pro\ Bold.otf);
+    /* src: url(../font/KoPubWorld\ Batang_Pro\ Light.otf);
+  src: url(../font/KoPubWorld\ Batang_Pro\ Medium.otf); */
+}
+
+@font-face {
+    font-family: kopubBatang_Light;
+    src: url(../font/KoPubWorld\ Batang_Pro\ Light.otf);
+}
+
+@font-face {
+    font-family: kopubBatang_Medium;
+    src: url(../font/KoPubWorld\ Batang_Pro\ Medium.otf);
+}
+
+@font-face {
+    font-family: maitree;
+    src: url(../font/Maitree/Maitree-Bold.ttf);
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: kopubBatang_Light;
+    font-size: 16px;
+}
+
+header {
+  width: 100%;
+  height: 15vh;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  z-index: 99;
+  font-size: 1.1rem;
+  /* 헤더 마우스휠 내리면 사라지고 올리면 나타나게 */
+  transition: .2s linear;
+}
+
+main header h1 span {
+  font-size: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px)
+}
+
+header .h_inner {
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h_inner h1 {
+  width: fit-content;
+  height: fit-content;
+}
+
+.h_inner .menu {
+  font-family: kopubBatang_bold;
+}
+
+
+.h_inner .menu>li {
+  float: left;
+  width: 90px;
+  margin: 0 10px;
+  line-height: 35px;
+  font-weight: bold;
+  margin-top: 25px;
+  text-align: center;
+  position: relative;
+  z-index: 99;
+}
+
+/* 밑줄 효과 */
+.h_inner .menu>li:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  display: block;
+  border-bottom: 2px solid #000;
+  transition: all 250ms ease-out;
+  left: 50%;
+  width: 0;
+}
+
+.h_inner .menu>li:not(:last-child):hover::after {
+  transition: all 250ms ease-out;
+  left: 0%;
+  width: 100%;
+}
+
+
+
+.h_inner button {
+  /* 예약하기버튼 */
+  border: none;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  border-radius: 100%;
+  margin-left: 20px;
+  margin-top: -25px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 15px;
+  box-shadow: 4px 4px 0 rgb(0 0 0 / 30%);
+  transform: rotate(-15deg);
+  /* hover원래 각도로 */
+}
+.h_inner button:hover {
+  transform: rotate(0deg);
+  transition: .2s;
+}
+
+/* //header */
+.contents {
+    width: 100%;
+}
+
+.c_inner {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.c_inner .menu {
+    margin: 8% 0;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.c_inner .menu ul {
+    display: flex;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.c_inner .menu ul li {
+    margin-right: 3%;
+}
+
+.c_inner .menu ul li:last-child {
+    color: #adadad;
+}
+
+.c_inner .menu ul li:hover {
+    /* mouseover 스크립트주기★ */
+    color: #000;
+    transition: .5s;
+}
+
+/* 밑줄효과 */
+.c_inner ul li:after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px #000000;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.c_inner ul li:hover:after {
+    transform: scaleX(1);
+}
+
+/* table */
+.c_inner .table {
+    width: 100%;
+}
+
+.c_inner .table .topBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.c_inner .table .topBox .count span {
+    font-weight: bolder;
+}
+
+.c_inner .table .topBox .search {
+    display: flex;
+    align-items: center;
+}
+
+.search .selectBox select {
+    width: 100%;
+    height: 30px;
+    border: navajowhite;
+    border-bottom: 2px solid #000;
+    font-weight: 900;
+    padding-left: 20px;
+    color: #333;
+}
+
+.search .inputBox {
+    height: 30px;
+    border-bottom: 2px solid #000;
+    text-align: left;
+    position: relative;
+}
+
+.search .inputBox input {
+    border: none;
+}
+
+.search .inputBox .btn {
+    position: absolute;
+    top: 7px;
+    right: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 8%;
+}
+
+table caption {
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+}
+
+table colgroup {
+    display: table-column-group;
+}
+
+table colgroup col {
+    display: table-column;
+}
+
+table colgroup .n1 {
+    width: 15%;
+}
+
+table colgroup .n3 {
+    width: 15%;
+}
+
+table colgroup .n4 {
+    width: 15%;
+}
+
+table thead th {
+    padding: 17px 0;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 15px;
+    color: #000;
+    font-weight: bolder;
+    background: #f8f8f8;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+table tbody tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+table tbody td {
+    font-size: 0.95rem;
+    padding: 17px 0;
+    text-align: center;
+    color: #666666;
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody td .noti {
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 900;
+}
+
+table tbody .left {
+    text-align: left;
+}
+
+/* //table */
+.paging {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 10%;
+}
+
+.paging .page {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.paging .page a {
+    display: block;
+    font-weight: 900;
+    color: #adadad;
+}
+
+.paging .page a:first-child {
+    color: #000;
+}
+
+.paging .page a:first-child::after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px #000000;
+}
+
+.next {
+    position: relative;
+    border: 1px solid #e6e6e6;
+    width: 30px;
+    height: 30px;
+}
+
+.next::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-65%, -50%) rotate(45deg);
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+}
+
+.next:hover {
+    background-color: #000;
+}
+
+.next::after:hover {
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    /* 이거 어케하넝 */
+}
+
+
+
+/* footer */
+
+footer {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+.f_inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.f_inner .f_1st {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+
+.f_inner .f_1st .flogo {
+  width: fit-content;
+  height: fit-content;
+}
+
+.f_inner .f_1st .flogo img {
+  width: 80%;
+}
+
+.f_inner .f_1st .f_menu {
+  font-family: kopubBatang_bold;
+  width: 50%;
+}
+
+.f_inner .f_1st .f_menu ul li {
+  float: left;
+  margin: 0 5%;
+}
+
+.f_inner .f_2nd {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.f_inner .text {
+  font-size: .8rem;
+  color: #adadad;
+  line-height: 30px;
+}
+
+.f_inner .f_2nd .icon {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+.f_inner .f_2nd .icon a {
+  display: block;
+  width: 25%;
+  margin: 0 3%;
+}
+
+.f_inner .copy {
+  font-size: .7rem;
+  margin-top: 25px;
+  border-top: 1px solid #adadad;
+}
+
+.f_inner .copy span {
+  display: block;
+  font-size: .9rem;
+  color: #adadad;
+  line-height: 45px;
+  float: right;
+}

@@ -1,0 +1,1969 @@
+@import url(./reset.css);
+
+@font-face {
+  font-family: kopubBatang_bold;
+  src: url(../font/KoPubWorld\ Batang_Pro\ Bold.otf);
+  /* src: url(../font/KoPubWorld\ Batang_Pro\ Light.otf);
+  src: url(../font/KoPubWorld\ Batang_Pro\ Medium.otf); */
+}
+
+@font-face {
+  font-family: kopubBatang_Light;
+  src: url(../font/KoPubWorld\ Batang_Pro\ Light.otf);
+}
+
+@font-face {
+  font-family: kopubBatang_Medium;
+  src: url(../font/KoPubWorld\ Batang_Pro\ Medium.otf);
+}
+
+@font-face {
+  font-family: maitree;
+  src: url(../font/Maitree/Maitree-Bold.ttf);
+}
+
+@font-face {
+  font-family: Maitree_Light;
+  src: url(../font/Maitree/Maitree-Light.ttf);
+}
+*{
+  scroll-behavior: smooth;
+}
+
+main {
+  width: 100%;
+}
+
+body {
+  font-family: kopubBatang_Light;
+  font-size: 16px;
+  transition: .2 linear;
+}
+
+.title {
+  font-family: maitree;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+header {
+  width: 100%;
+  margin-top: 3vh;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  z-index: 99;
+  font-size: 1.1rem;
+  /* 헤더 마우스휠 내리면 사라지고 올리면 나타나게 */
+  transition: .2s linear;
+}
+
+main header h1 span {
+  font-size: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px)
+}
+
+header .h_inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h_inner h1 {
+  width: fit-content;
+  height: fit-content;
+  z-index: 9990;
+}
+
+.h_inner .menu {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  font-family: kopubBatang_bold;
+}
+
+.h_inner .menu>li {
+  line-height: 35px;
+  font-weight: bold;
+  margin-top: 25px;
+  text-align: center;
+  position: relative;
+  z-index: 99;
+}
+
+/* 밑줄 효과 */
+.h_inner .menu>li:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  display: block;
+  border-bottom: 2px solid #000;
+  transition: all 250ms ease-out;
+  left: 50%;
+  width: 0;
+}
+
+.h_inner .menu>li:not(:last-child):hover::after {
+  transition: all 250ms ease-out;
+  left: 0%;
+  width: 100%;
+}
+
+.h_inner button {
+  /* 예약하기버튼 */
+  border: none;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  border-radius: 100%;
+  margin-left: 10px;
+  margin-top: -25px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 15px;
+  box-shadow: 4px 4px 0 rgb(0 0 0 / 30%);
+  transform: rotate(-15deg);
+  /* hover원래 각도로 */
+}
+
+.h_inner button:hover {
+  transform: rotate(0deg);
+  transition: .2s;
+}
+
+/* //header */
+#nav-icon4 {
+  width: 45px;
+  height: 32px;
+  margin-right: 2%;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  display: none;
+  z-index: 9990;
+}
+
+#nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background: #000000;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon4 span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(2) {
+  top: 13px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(3) {
+  top: 26px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon4.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px;
+}
+
+#nav-icon4.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+#nav-icon4.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 29px;
+  left: 8px;
+}
+
+/* //nav */
+/* mouse */
+.circle {
+  border-radius: 100px;
+  will-change: transform;
+  position: absolute;
+}
+
+.circle--1 {
+  height: 40px;
+  width: 40px;
+  border: solid rgba(255, 255, 255, 0.5) 3px;
+}
+
+.circle--2 {
+  background: black;
+  height: 6px;
+  width: 6px;
+  z-index: 2;
+  background: rgb(168, 168, 168);
+}
+
+/* open menu */
+.openbox {
+  cursor: none;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9990;
+  display: none;
+}
+
+.openbox .o_top {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.openbox h1 {
+  width: 200px;
+  margin-left: 2%;
+}
+
+.openmenu {
+  padding: 200px 0;
+}
+
+.openmenu ul {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  z-index: 100;
+}
+
+.openmenu ul li {
+  width: fit-content;
+  font-size: 2rem;
+  line-height: 80px;
+  color: #fff;
+}
+
+.openmenu ul li a {
+  cursor: none;
+  display: block;
+}
+
+.openmenu ul li:hover {
+  color: rgb(98, 98, 98);
+  transition: .3s linear;
+}
+
+.main {
+  width: 100%;
+  margin-bottom: 20%;
+}
+
+.m_inner {
+  display: flex;
+  max-width: 1300px;
+  margin: 3% auto;
+  position: relative;
+}
+
+.mainT {
+  width: 45%;
+}
+
+
+.m_inner .mainT {
+  width: 45%;
+  height: 100%;
+  margin-top: 5%;
+}
+
+.m_inner .mainT h2 {
+  height: 7vh;
+  margin-top: 10%;
+}
+
+.m_inner .mainT span {
+  display: block;
+  font-size: 1.15rem;
+  line-height: 32px;
+  width: 95%;
+}
+
+.mainS {
+  width: 50%;
+  margin: auto;
+}
+
+.main_allbox {
+  width: 100%;
+  position: relative;
+  margin-bottom: 5%;
+}
+
+.mainS .Main_slide {
+  margin-top: 5%;
+  position: relative;
+}
+
+.mainbg {
+  position: absolute;
+  bottom: -32%;
+  background-color: #000;
+  width: 100%;
+  height: 15vw;
+  z-index: -1;
+}
+
+.mainbg .text {
+  margin-left: 10%;
+  margin-top: 5%;
+  font-family: maitree;
+  font-weight: 900;
+  color: #fff;
+  font-size: 7vw;
+}
+/* 메인 슬라이드 버튼 */
+
+/* 포지션 깨기 */
+.mainS .MainSwiper{
+  overflow: unset;
+}
+
+.mainS .swiper-button-next {
+  position: absolute;
+  top: 20%;
+  right:-3%;
+  background-image: url(../img/arrow1.svg);
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+}
+
+.mainS .swiper-button-prev {
+  position: absolute;
+  top: 28%;
+  right: -3%;
+  background-image: url(../img/arrow1-2.svg);
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+}
+
+.mainS .swiper-button-next::after,
+.mainS .swiper-button-prev::after {
+  display: none;
+}
+
+/* 
+버튼임---------------------
+.m_inner .slide .arrow button {
+  display: block;
+  background: none;
+  border: none;
+}
+
+.m_inner .slide .arrow button:nth-child(2) {
+  margin-top: -5px;
+}
+
+.m_inner .slide .arrow {
+  position: absolute;
+  top: 70px;
+  right: 0px;
+} */
+/* 
+.mainbg {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 20vw;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+}
+*/
+
+/* //main */
+.art {
+  width: 100%;
+  /* height: 100vh; */
+  margin: 5% 0;
+  margin-bottom: 15%;
+}
+
+.art .a_inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.art .title h2 {
+  text-decoration: overline;
+  text-decoration-thickness: 4px;
+}
+
+.a_inner .allbox {
+  display: flex;
+  justify-content: center;
+}
+
+.a_inner .allbox .text {
+  width: 65%;
+  position: relative;
+}
+
+.a_inner .allbox .name {
+  margin-right: 2%;
+}
+
+.a_inner .allbox .textbox {
+  margin-left: 5%;
+  width: 78%;
+}
+
+.a_inner .allbox .textbox p {
+  font-family: kopubBatang_Medium;
+  margin: 5% 0;
+  font-size: 1.8rem;
+  line-height: 45px;
+}
+
+.a_inner .allbox .textbox span {
+  display: block;
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 900;
+  bottom: 0;
+  right: 5%;
+}
+
+.a_inner .allbox .textbox .icon {
+  position: absolute;
+  right: 15%;
+}
+
+.a_inner .allbox .name p {
+  font-family: maitree;
+  font-size: 6.5vw;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.a_inner .allbox .name p span {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* //art */
+.contents {
+  width: 100%;
+  padding: 5% 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.c_inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.c_inner h2 {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.c_inner .text {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 30px;
+  margin-bottom: 5%
+}
+
+.c_inner .all {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.c_inner .all .box img {
+  margin: auto;
+  width: 95%;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+
+.c_inner .all .box .view {
+  margin-top: 5%;
+}
+
+.c_inner .all .box p {
+  margin: 5% 0;
+  font-size: 1.3rem;
+}
+
+.c_inner .all .box span {
+  font-size: .8rem;
+  display: block;
+}
+
+/* 밑줄효과 */
+.c_inner .all .box span {
+  color: #fff;
+  display: inline-block;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.c_inner .all .box span::after {
+  display: block;
+  content: '';
+  margin-top: 2px;
+  border-bottom: solid 2px #fff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.c_inner .all .box:hover span:after {
+  transform: scaleX(1);
+}
+
+.c_inner .all .box span:hover {
+  cursor: pointer;
+}
+
+.c_inner .all .box:hover img {
+  transition: .5s linear;
+  filter: grayscale(0%);
+}
+
+/* 모바일 */
+.mobile_con {
+  display: none;
+  position: relative;
+  top: 0;
+  max-width: 80%;
+  margin: auto;
+}
+
+.mobile_con .m_con>.view {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.mobile_con .m_con>.view span {
+  margin-top: 2%;
+  line-height: 28px;
+  font-size: .85rem;
+}
+
+/* 반응형 버튼 */
+.mobile_con .swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, 10px);
+}
+
+.mobile_con .swiper-button-prev,
+.mobile_con .swiper-button-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  color: rgb(255, 255, 255) !important;
+
+}
+
+.mobile_con .swiper-button-prev:after,
+.mobile_con .swiper-button-next:after {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+}
+
+.mobile_con .swiper-pagination-bullet {
+  background: rgb(255, 255, 255) !important;
+}
+
+/* 모바일 밑줄 */
+
+.mobile_con .m_con span {
+  color: #fff;
+  display: inline-block;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.mobile_con .m_con span::after {
+  display: block;
+  content: '';
+  border-bottom: solid 1.5px #fff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.mobile_con .m_con:hover span:after {
+  transform: scaleX(1);
+}
+
+.mobile_con .m_con span:hover {
+  cursor: pointer;
+}
+
+/* //contents */
+.itamiText {
+  font-family: kopubBatang_Medium;
+  width: 100%;
+  margin-top: 25%;
+  margin-bottom: 35%;
+}
+
+.itamiText_inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.itamiText_inner h2 {
+  margin: 10% 0;
+  font-size: 1.62em;
+  font-weight: 100;
+  line-height: 50px;
+}
+
+.itamiText_inner strong {
+  font-weight: 900;
+}
+
+.itamiText_inner span {
+  float: right;
+}
+
+.video {
+  margin: 15% 0;
+  width: 100%;
+}
+
+.video .title h2 {
+  text-decoration: overline;
+  text-decoration-thickness: 4px;
+  margin-bottom: 5%;
+}
+
+.video .title {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.video .text {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.video .text h3 {
+  font-size: 1.8rem;
+}
+
+.v_inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.v_inner video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.v_inner video[poster] {
+  width: 100%;
+  height: 100%;
+}
+
+.v_inner .v_btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99.5%;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v_inner .v_btn button {
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+}
+
+.v_inner .v_btn button img {
+  margin: 0 auto;
+  margin-left: 30%;
+}
+
+.musium {
+  max-width:1800px;
+  margin: 10% 0;
+}
+
+.musium .title {
+  text-decoration: overline;
+  text-decoration-thickness: 4px;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.musium .mbox {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1%;
+}
+.musium .mbox img{
+  width: 100%;
+}
+
+.musium .mbox .Bbox {
+  display: block;
+  width: 100%;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+.musium .mbox .Bbox span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  font-size: 1.3rem;
+  line-height: 45px;
+  color: #fff; 
+  opacity:0;
+  /* 나타나게 효과주기 */
+}
+
+/* //musium */
+.line {
+  margin-top: 10%;
+  width: 100%;
+  height: 15vh;
+  background-color: #000000;
+}
+
+.line h2 {
+  font-size: 2rem;
+  margin-left: 2%;
+  line-height: 15vh;
+  color: #fff;
+}
+
+/* //line */
+.ticket {
+  width: 100%;
+  margin: 10% 0;
+}
+
+.ticket .all {
+  max-width: 1300px;
+  margin: 0 auto;
+  border: 2px dashed #000;
+  padding: 1%;
+}
+
+.ticket .all .box {
+  max-width: 1260px;
+  padding: 1%;
+  margin: auto;
+  border: 2px solid #000;
+  display: flex;
+}
+
+.ticket .all .box .left {
+  width: 50%;
+  position: relative;
+}
+
+.ticket .all .box .left h2 {
+  font-family: maitree;
+  font-size: 2.5rem;
+  line-height: 50px;
+  position: absolute;
+  top: 0;
+}
+
+.ticket .all .box .right {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket .all .box .right span {
+  display: block;
+  line-height: 30px;
+  margin-left: 3%;
+}
+
+.ticket .all .box .right .btn {
+  /* 위치변경 값 */
+  align-self: flex-end;
+  margin-top: 150px;
+  margin-right: 100px;
+}
+
+.ticket .all .box .right .btn button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 900;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  /* button크기값 */
+  width: 190px;
+  height: 70px;
+  position: relative;
+}
+
+.ticket .all .box .right .btn button i {
+  font-size: 1.5rem;
+}
+
+.ticket .all .box .right .btn button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 3px;
+  left: 3px;
+  z-index: -1;
+  border: 2px dashed #000;
+}
+
+.ticket .all .box .right .btn:hover button {
+  background-color: #000;
+  color: #fff;
+  transition: .5s;
+  /* 스크립트로 다시주기  */
+}
+
+footer {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+}
+
+.f_inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.f_inner .f_1st {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+
+.f_inner .f_1st .flogo {
+  width: fit-content;
+  height: fit-content;
+}
+
+.f_inner .f_1st .flogo img {
+  width: 80%;
+}
+
+.f_inner .f_1st .f_menu {
+  width: 50%;
+}
+
+.f_inner .f_1st .f_menu ul li {
+  float: left;
+  margin: 0 5%;
+}
+
+.f_inner .f_2nd {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.f_inner .text {
+  font-size: .8rem;
+  color: #adadad;
+  line-height: 30px;
+}
+
+.f_inner .f_2nd .icon {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+.f_inner .f_2nd .icon a {
+  display: block;
+  width: 25%;
+  margin: 0 3%;
+}
+
+.f_inner .copy {
+  margin-top: 25px;
+  border-top: 1px solid #adadad;
+}
+
+.f_inner .copy span {
+  display: block;
+  font-size: .9rem;
+  color: #575757;
+  line-height: 45px;
+  float: right;
+}
+
+.btnTop {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  right: 40px;
+  top: -100px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 1.5px solid #000;
+  background: #fff url(../img/btn_top.png) no-repeat center center;
+  transition: all .3s ease;
+  text-indent: -9999px;
+}
+
+button {
+  font-size: 15px;
+}
+
+audio,
+button,
+canvas,
+input,
+label,
+iframe,
+img,
+select,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/* 분기점 */
+
+@media screen and (max-width:1400px) {
+  header .h_inner {
+    max-width: 1200px;
+    transition: .2s linear;
+  }
+
+  .h_inner button {
+    /* 예약하기버튼 */
+    width: 72px;
+    height: 72px;
+  }
+
+  .m_inner {
+    max-width: 1200px;
+    transition: .2s linear;
+  }
+
+  .m_inner .mainT span {
+    font-size: 1.1rem;
+    line-height: 32px;
+  }
+
+  .mainS .swiper-button-next {
+    width: 45px;
+    height: 45px;
+  }
+
+  .mainS .swiper-button-prev {
+    width: 45px;
+    height: 45px;
+  }
+
+
+  .art .a_inner {
+    max-width: 1200px;
+    transition: .2s linear;
+
+  }
+
+  .a_inner .allbox .textbox {
+    margin-top: 10%;
+  }
+
+  .a_inner .allbox .textbox p {
+    font-size: 1.5rem;
+  }
+
+  .a_inner .allbox .name p {
+    font-size: 7vw;
+  }
+
+  .c_inner {
+    max-width: 1100px;
+    transition: .2s linear;
+  }
+
+  .c_inner .text {
+    font-size: 1rem;
+    line-height: 28px;
+  }
+
+  .c_inner h2 {
+    margin-top: 2%;
+    font-size: 1.8em;
+  }
+
+  .itamiText_inner {
+    max-width: 1100px;
+    transition: .2s linear;
+  }
+
+  .itamiText_inner h2 {
+    font-size: 1.45em;
+  }
+
+  .video .title {
+    max-width: 1200px;
+    transition: .2s linear;
+  }
+
+  .v_inner {
+    max-width: 1200px;
+    transition: .2s linear;
+  }
+
+  .ticket .all {
+    max-width: 1200px;
+    transition: .2s linear;
+  }
+
+  .ticket .all .box .right .btn {
+    /* 위치변경 값 */
+    margin-top: 120px;
+    margin-right: 90px;
+    transition: .2s linear;
+  }
+
+  .f_inner {
+    max-width: 1200px;
+    transition: .2s linear;
+  }
+
+  .f_inner .f_1st .f_menu {
+    font-family: kopubBatang_bold;
+    width: 60%;
+  }
+
+}
+
+@media screen and (max-width:1200px) {
+  header .h_inner {
+    max-width: 1024px;
+  }
+
+  .h_inner .menu {
+    width: 45%;
+  }
+
+  /* .mainbg {
+    height: 24vh;
+    bottom: 13%;
+  } */
+
+  .m_inner {
+    max-width: 1024px;
+
+  }
+
+  .m_inner .mainT h2 {
+    font-size: 1.2rem;
+    height: 5vh;
+  }
+
+  .m_inner .mainT span {
+    font-size: .9rem;
+    line-height: 28px;
+  }
+
+  .mainS .swiper-button-next {
+    top: 22%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .mainS .swiper-button-prev {
+    top: 30%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .art .title h2 {
+    font-size: 1.3rem;
+  }
+
+  .art .a_inner {
+    max-width: 1024px;
+  }
+
+  .a_inner .allbox .textbox p {
+    margin-top: 15%;
+    font-size: 1.35rem;
+    line-height: 40px;
+  }
+
+  .a_inner .allbox .textbox figure:nth-of-type(2) {
+    margin-top: 5%;
+  }
+
+
+  .a_inner .allbox .name p {
+    font-size: 7vw;
+  }
+
+  .itamiText_inner {
+    max-width: 1024px;
+  }
+
+  .itamiText_inner h2 {
+    font-size: 1.25em;
+    line-height: 45px;
+  }
+
+  .video .title {
+    max-width: 1024px;
+    transition: .2s linear;
+  }
+
+  .video .title h2 {
+    font-size: 1.2rem;
+  }
+
+  .v_inner {
+    max-width: 1024px;
+    transition: .2s linear;
+  }
+
+
+  .musium .title h2 {
+    font-size: 1.2rem;
+  }
+
+  .ticket .all {
+    max-width: 1024px;
+  }
+
+  .ticket .all .box .left h2 {
+    font-size: 2.3rem;
+    line-height: 50px;
+  }
+
+  .ticket .all .box .right .btn {
+    /* 위치변경 값 */
+    margin-top: 50px;
+    margin-right: 40px;
+  }
+
+  .f_inner {
+    max-width: 1024px;
+  }
+
+  .f_inner .f_1st .f_menu {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  header .h_inner {
+    max-width: 767px;
+  }
+
+  .h_inner .menu {
+    width: 50%;
+    margin-bottom: 1%;
+  }
+
+  .h_inner .menu>li {
+    font-size: .95rem;
+    margin-top: 25px;
+  }
+
+  .h_inner button {
+    font-size: .8rem;
+    width: 65px;
+    height: 65px;
+  }
+
+  .m_inner {
+    max-width: 767px;
+  }
+
+  .m_inner .mainT h2 {
+    font-size: 1.1rem;
+    height: 3vh;
+  }
+
+  .m_inner .mainT span {
+    font-size: .8rem;
+    line-height: 24px;
+    width: 95%;
+  }
+
+  .mainS .swiper-button-next {
+    top: 25%;
+    width: 35px;
+    height: 35px;
+  }
+
+  .mainS .swiper-button-prev {
+    top: 35%;
+    width: 35px;
+    height: 35px;
+  }
+
+
+  .art .a_inner {
+    max-width: 767px;
+  }
+
+  .a_inner .allbox .textbox {
+    width: 80%;
+    margin-top: 20%;
+  }
+
+  .a_inner .allbox .textbox p {
+    font-size: 1.05rem;
+    line-height: 34px;
+  }
+
+
+  .a_inner .allbox .name p {
+    font-size: 8vw;
+  }
+
+  .c_inner {
+    max-width: 767px;
+  }
+
+  .c_inner h2 {
+    margin-top: 5%;
+    font-size: 2em;
+  }
+
+  .c_inner .text {
+    width: 90%;
+    font-size: .95rem;
+    line-height: 26px;
+  }
+
+  .c_inner .all .box p {
+    margin: 5% 0;
+    font-size: 1.1rem;
+  }
+
+  .itamiText_inner {
+    max-width: 767px;
+  }
+
+  .itamiText_inner h2 {
+    font-size: 1.08em;
+    line-height: 34px;
+  }
+
+  .itamiText_inner span {
+    font-size: .9rem;
+  }
+
+  .v_inner {
+    max-width: 767px;
+  }
+
+  .video .title {
+    max-width: 767px;
+    transition: .2s linear;
+  }
+
+  .video .text {
+    font-size: 1.2rem;
+  }
+
+  .video .text h3 {
+    font-size: 1.5rem;
+  }
+
+  .ticket {
+    max-width: 767px;
+    margin: 10% auto;
+    transition: .2s linear;
+  }
+
+  .ticket .all {
+    width: 75%;
+  }
+
+  .ticket .all .box {
+    display: block;
+    padding: 3%;
+  }
+
+  .ticket .all .box .left {
+    width: 100%;
+  }
+
+  .ticket .all .box .left figure {
+    width: 100%;
+  }
+
+  .ticket .all .box .left figure img {
+    width: 100%;
+  }
+
+  .ticket .all .box .right {
+    width: 100%;
+  }
+
+  .ticket .all .box .right span {
+    font-size: 1rem;
+    margin-top: 3%;
+  }
+
+  .ticket .all .box .right .btn {
+    /* 위치변경 값 */
+    margin-top: 8px;
+    margin-right: 10px;
+    margin-bottom: 2%;
+  }
+
+  .f_inner {
+    max-width: 767px;
+  }
+
+  .f_inner .f_1st .f_menu {
+    width: 70%;
+    font-size: .9rem;
+    margin-left: 8%;
+  }
+
+  .f_inner .f_1st .f_menu ul li {
+    margin: 0 3%;
+  }
+}
+
+@media screen and (max-width:767px) {
+  header .h_inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  header .h_inner .menu {
+    display: none;
+  }
+
+  #nav-icon4 {
+    display: block;
+  }
+
+  /* 메인 */
+  .m_inner {
+    max-width: 90%;
+    flex-direction: column-reverse;
+  }
+
+  .m_inner .mainS {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .mainbg {
+    height: 50vh;
+    bottom: 0%;
+  }
+
+  /* 배경 글자 */
+  .mainbg .text {
+    margin-left: 10%;
+    font-size: 3.8vw;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    right: 5%;
+  }
+
+  .mainbg .text span {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    writing-mode: vertical-rl;
+    position: absolute;
+    right: 0;
+  }
+
+  .m_inner .mainT {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+
+  .m_inner .mainT h2 {
+    color: #fff;
+  }
+
+  .m_inner .mainT span {
+    color: #fff;
+    width: 100%;
+  }
+  .mainS .swiper-button-next {
+  top: 22%;
+  width: 45px;
+  height: 45px;
+ }
+ .mainS .swiper-button-prev {
+  top: 30%;
+  width: 45px;
+  height: 45px;
+ } 
+
+  .art .title h2 {
+    font-size: 1.1rem;
+  }
+
+  .art .a_inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .a_inner .allbox .textbox p {
+    margin-top: 20%;
+    font-size: 1rem;
+    line-height: 32px;
+  }
+
+
+  .c_inner {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .c_inner h2 {
+    margin-top: 2%;
+    font-size: 1.5em;
+  }
+
+  .c_inner .text {
+    width: 90%;
+    font-size: .8rem;
+    line-height: 24px;
+  }
+
+  .c_inner .all .box p {
+    font-size: .8rem;
+  }
+
+  .itamiText_inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .itamiText_inner h2 {
+    font-size: .92em;
+    line-height: 34px;
+  }
+
+  .v_inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .video .title {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .video .title h2 {
+    font-size: 1.1rem;
+  }
+
+  .video .text {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .video .text h3 {
+    font-size: 1.3rem;
+  }
+
+  .line {
+    height: 10vh;
+  }
+
+  .line h2 {
+    font-size: 1.2rem;
+    margin-left: 3%;
+    line-height: 10vh;
+  }
+
+  .musium .title h2 {
+    font-size: 1.1rem;
+  }
+
+
+  .ticket .all {
+    width: 65%;
+  }
+
+  .ticket .all .box .left h2 {
+    font-size: 1.5rem;
+    line-height: 40px;
+  }
+
+  .ticket .all .box .right span {
+    font-size: .9rem;
+    line-height: 24px;
+    margin-top: 3%;
+    margin-left: 0;
+  }
+
+  .ticket .all .box .right .btn button {
+    font-size: 1rem;
+    width: 140px;
+    height: 60px;
+  }
+
+  .ticket .all .box .right .btn {
+    margin-top: 7px;
+    margin-right: 12px;
+  }
+
+  .ticket .all .box .right .btn button i {
+    margin-top: 5%;
+    font-size: 1.4rem;
+  }
+
+  .f_inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .f_inner .f_1st {
+    display: block;
+  }
+
+  .f_inner .f_1st .flogo img {
+    width: 30%
+  }
+
+  .f_inner .f_1st .f_menu {
+    margin-left: 0%;
+    width: 100%;
+  }
+
+  .f_inner .f_1st .f_menu ul li {
+    font-size: .9rem;
+    margin: 3% 0;
+    margin-right: 3%;
+  }
+
+  .f_inner .text {
+    font-size: .7rem;
+    color: #adadad;
+    line-height: 25px;
+  }
+
+  .f_inner .copy span {
+    display: block;
+    font-size: .7rem;
+    color: #575757;
+    line-height: 45px;
+    float: right;
+  }
+
+  .f_inner .f_2nd .icon {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .f_inner .f_2nd .icon a {
+    display: block;
+    width: 20%;
+    margin: 0 3px;
+  }
+
+  .btnTop {
+    right: 20px;
+    top: -100px;
+    width: 50px;
+    height: 50px;
+  }
+
+}
+
+@media screen and (max-width:600px) {
+  .mainS .swiper-button-next {
+    top: 22%;
+    width: 40px;
+    height: 40px;
+   }
+   .mainS .swiper-button-prev {
+    top: 30%;
+    width: 40px;
+    height: 40px;
+   } 
+  
+
+  .a_inner .allbox {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .a_inner .allbox .text {
+    width: 90%;
+  }
+
+  .a_inner .allbox .textbox {
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+
+  .a_inner .allbox .name p {
+    font-size: 7vw;
+  }
+
+  .a_inner .allbox .textbox p {
+    margin-top: 20%;
+    font-size: .85rem;
+    line-height: 26px;
+  }
+
+  .a_inner .allbox .textbox span {
+    font-size: .8rem;
+    right: 0%;
+  }
+
+  .a_inner .allbox .textbox figure img {
+    width: 80%;
+  }
+
+  .a_inner .allbox .textbox figure:nth-of-type(2) {
+    margin-top: 0%;
+  }
+
+  .c_inner .all {
+    display: none;
+  }
+
+  .c_inner .text {
+    display: none;
+  }
+
+  .mobile_con {
+    display: block;
+    transition: .2s;
+  }
+
+  .c_inner .text {
+    font-size: .7rem;
+    line-height: 22px;
+  }
+
+  .c_inner h2 {
+    font-size: 2em;
+  }
+
+  .c_inner .all .box span {
+    font-size: .65rem;
+  }
+
+  .itamiText_inner h2 {
+    font-size: .8em;
+    line-height: 24px;
+  }
+
+  .itamiText_inner span {
+    font-size: .65rem;
+  }
+
+  .musium {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .musium .mbox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .musium .mbox .Bbox {
+    display: block;
+    position: relative;
+  }
+
+  .musium .mbox .Bbox img {
+    margin-bottom: 0%;
+  }
+
+  .ticket .all {
+    width: 60%;
+  }
+
+  .ticket .all .box .left h2 {
+    font-size: 1.1rem;
+    line-height: 32px;
+  }
+
+  .ticket .all .box .right span {
+    font-size: .8rem;
+    line-height: 20px;
+  }
+
+  .ticket .all .box .right .btn button {
+    font-size: .8rem;
+    width: 120px;
+    height: 40px;
+  }
+
+  .ticket .all .box .right .btn button i {
+    margin-top: 0%;
+    font-size: 1rem;
+  }
+
+
+  .ticket .all .box .right .btn {
+    /* 위치변경 값 */
+    margin-top: 8px;
+    margin-right: 10px;
+    margin-bottom: 2%;
+  }
+
+  .f_inner .f_1st .flogo img {
+    width: 40%
+  }
+
+}
+
+@media screen and (max-width:450px) {
+  .mainS .swiper-button-next {
+    top: 25%;
+   }
+   .mainS .swiper-button-prev {
+    top: 35%;
+   } 
+  .art .title h2 {
+    font-size: .9rem;
+  }
+
+  .a_inner .allbox .textbox p {
+    margin-top: 18%;
+    font-size: 0.8rem;
+    line-height: 22px;
+  }
+
+  .a_inner .allbox .textbox figure img {
+    display: none;
+  }
+
+  .a_inner .allbox .pictrue {
+    width: 70%;
+  }
+
+  .a_inner .allbox .textbox span {
+    font-size: .7rem;
+    right: 0%;
+  }
+
+  .c_inner .all .box span {
+    font-size: .65rem;
+  }
+
+  .video .title h2 {
+    font-size: .9rem;
+  }
+
+  .video .text h3 {
+    font-size: 1rem;
+  }
+
+  .video .text span {
+    font-size: .8rem;
+  }
+
+  .musium .title h2 {
+    font-size: .9rem;
+  }
+
+  .line {
+    height: 8vh;
+  }
+
+  .line h2 {
+    display: none;
+  }
+
+  .ticket .all {
+    width: 85%;
+  }
+
+  .ticket .all .box .left h2 {
+    font-size: 1.1rem;
+    line-height: 32px;
+  }
+
+  .ticket .all .box .right span {
+    font-size: .8rem;
+    line-height: 20px;
+  }
+
+  .ticket .all .box .right .btn button {
+    font-size: .8rem;
+    width: 120px;
+    height: 40px;
+  }
+
+  .ticket .all .box .right .btn button i {
+    margin-top: 0%;
+    font-size: 1rem;
+  }
+
+  .ticket .all .box .right .btn {
+    /* 위치변경 값 */
+    margin-top: 8px;
+    margin-right: 10px;
+    margin-bottom: 2%;
+  }
+
+  .f_inner .f_1st .flogo img {
+    margin-left: 25%;
+  }
+
+  .f_inner .f_1st .f_menu {
+    margin: auto;
+  }
+
+  .f_inner .f_1st .f_menu ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+
+  .f_inner .f_1st .f_menu ul li {
+    font-size: .75rem;
+    margin-top: 5%;
+  }
+
+  .f_inner .copy span {
+    display: block;
+    font-size: .7rem;
+    color: #575757;
+    line-height: 40px;
+    float: right;
+  }
+
+  .f_inner .f_2nd {
+    display: none;
+  }
+
+  .btnTop {
+    right: 20px;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 0;
+  }
+
+}
+
+@media screen and (max-width:400px) {
+  .mainS .swiper-button-next {
+    top: 25%;
+   }
+   .mainS .swiper-button-prev {
+    top: 35%;
+   }
+   .m_inner .mainT h2 {
+    font-size: .9rem;
+    height: 2vh;
+}
+   .m_inner .mainT span {
+    font-size: .7rem;
+    line-height: 20px;
+  } 
+  .mainbg .text {
+    top: 53%;
+  }
+  .itamiText {
+    display: none;
+  }
+}
