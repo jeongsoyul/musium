@@ -7,36 +7,77 @@
     <title>오시는길</title>    
     <link rel="stylesheet" href="./css/sub2-1.css">
     <script src="https://kit.fontawesome.com/43c95197f5.js" crossorigin="anonymous"></script>
+    <script src="./script/jquery-3.7.0.min.js"></script>
+    <script src="./script/sub2_1.js"></script>
+    <script src="./script/mouse_script.js" defer></script>
 
 </head>
 
-<body>
-    <main>
-        <header>
-            <div class="h_inner">
-                <h1>
-                    <a href="./index.html">
-                        <img src="./img/logo.svg" alt="logo">
-                        <span>수풍석뮤지엄</span>
-                    </a>
-                </h1>
-                <ul class="menu">
-                    <li><a href="./sub1.html">박물관소개</a></li>
-                    <li><a href="./sub3.html">공지사항</a></li>
-                    <li><a href="./sub4.html">ITAMI JUN</a></li>
-                    <li><button type="button" onclick="location.href='sub5.html'">예약하기</button></li>                </ul>
-            </div>
-        </header>
-        <div class="m_box">
-            <div class="m_inner">
-                <ul>
-                    <li>박물관소개<i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></li>
-                    <li class="a"><a href="./sub1.html">수·풍·석水風石</a><i class="fa-solid fa-angle-right" style="color: #ffffff;"></i></li>
-                    <li class="b"><a href="./sub2.html">관람시간</a><i class="fa-solid fa-angle-right" style="color: #ffffff;"></i></li>
-                    <li class="c"><a href="./sub2-1.html">오시는 길</a></li>
-                </ul>
+<body><div class="openbox">
+    <div class="site">
+        <div class="circle circle--1"></div>
+        <div class="circle circle--2"></div>
+    </div>
+    <div class="openmenu">
+        <div class="black"></div>
+        <ul>
+            <li><a href="./sub1.html">박물관소개</a></li>
+            <li><a href="./sub3.html">공지사항</a></li>
+            <li><a href="./sub4.html">ITAMI JUN</a></li>
+            <li><a href="./sub5.html">예약하기</a></li>
+        </ul>
+    </div>
+</div>
+
+<main>
+    <header>
+        <div class="h_inner">
+            <h1>
+                <a href="./index.html">
+                    <img src="./img/h1Logo_b.png" alt="logo">
+                    <!--  <img src="./img/logo_w.png" alt="logo">  -->
+                    <span>수풍석뮤지엄</span>
+                </a>
+            </h1>
+            <ul class="menu">
+                <li><a href="./sub1.html">박물관소개</a></li>
+                <li><a href="./sub3.html">공지사항</a></li>
+                <li><a href="./sub4.html">ITAMI JUN</a></li>
+                <li><button type="button" onclick="location.href='sub5.html'">예약하기</button></li>
+            </ul>
+
+            <div id="nav-icon4">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
+    </header>
+    <div class="m_box">
+        <div class="m_inner">
+            <ul>
+                <li>박물관소개
+                    <i class="fa-solid fa-angles-right" style="color: #ffffff;"></i>
+                </li>
+                <li class="a submenu">
+                    <a href="./sub1.html">수·풍·석水風石</a>
+                    <i class="fa-solid fa-angle-right" style="color: #ffffff;"></i>
+                </li>
+                <li class="b submenu">
+                    <a href="./sub2.html">관람시간</a>
+                    <i class="fa-solid fa-angle-right" style="color: #ffffff;"></i>
+                </li>
+                <li class="c submenu">
+                    <a href="./sub2-1.html">오시는 길</a>
+                </li>
+            </ul>
+            <div class="mbtn">
+                <figure>
+                    <img src="./img/arrow_location.svg" alt="location">
+                </figure>
+            </div>
+        </div>
+    </div>
         <section class="contact">
             <div class="c_inner">
                 <div class="title">
@@ -128,6 +169,7 @@
                     <span>Copyright 2020. biotopiamuseum Co.,Ltd. All Rights Reserved.</span>
                 </div>
             </div>
+            <button type="button" class="btnTop" aria-label="top">btn</button>
         </footer>
     </main>
 </body>

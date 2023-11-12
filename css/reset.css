@@ -130,3 +130,6 @@ figure {
   width: fit-content;
   height: fit-content;
 }
+*::-webkit-scrollbar{
+  width: 0;
+}

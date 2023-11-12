@@ -1,6 +1,11 @@
 
-// 햄버거바 애니메이션
+
    $(document).ready(function () {
+
+    AOS.init();
+
+
+    // 햄버거바 애니메이션
     $('#nav-icon4').click(function () {
         $(this).toggleClass('open');
     });
@@ -51,10 +56,19 @@
    
 
 
-
     
     // 메인 슬라이드
     
+  var swiper = new Swiper(".MainSwiper", {
+    autoplay:false,
+    speed: 400,
+    effect: 'fade',
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 
     //con슬라이드
   var swiper = new Swiper(".mySwiper", {
@@ -75,15 +89,6 @@
   //scoll top
 
   let Tbtn = $(".btnTop"); //Tbtn = top button의미
-
-  $(window).scroll(() => {
-    if ($(this).scrollTop() > 100) {
-      Tbtn.stop(true).fadeIn();
-    } else {
-      Tbtn.stop(true).fadeOut();
-    }
-  }); //스크롤을 100을 내렸을때 버튼이 사라졌다가 원래대로하면 보이게
-
   Tbtn.click(() => {
     $(window).scrollTop(0);
     //수직상의 (위치값) 으로 이동
@@ -93,18 +98,18 @@
 
 
 // 스크롤시 musium 글보이게
-  $(window).scroll( function(){
-    $('.musium .mbox .Bbox span').each( function(i){
+//   $(window).scroll( function(){
+//     $('.musium .mbox .Bbox span').each( function(i){
         
-        var bottom_of_element = $(this).offset().top + $(this).outerHeight();
-        var bottom_of_window = $(window).scrollTop() + $(window).height();
+//         var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+//         var bottom_of_window = $(window).scrollTop() + $(window).height();
         
-        if( bottom_of_window > bottom_of_element ){
-            $(this).animate({'opacity':'1','margin-left':'0px'},500);
-        }
+//         if( bottom_of_window > bottom_of_element ){
+//             $(this).animate({'opacity':'1','margin-left':'0px'},500);
+//         }
         
-    }); 
-});
+//     }); 
+// });
 
 
     /////////////////////////////
