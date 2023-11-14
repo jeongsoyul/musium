@@ -338,12 +338,10 @@ header .h_inner {
 
 .m_box .m_inner ul .c:hover {
   color: #fff;
-  transition: .2s linear;
 }
 
 .m_box .m_inner ul .a:hover {
   color: #fff;
-  transition: .2s linear;
 }
 
 /* 반응형 버튼 */
@@ -503,27 +501,28 @@ td {
 .caution {
   width: 100%;
   overflow: hidden;
-  position: relative;
-  margin-top: 5%;
+  position: relative; 
+  margin: 3% 0;
+  background-image: url(../img/sub2_bg.png);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-family: maitree;
+  font-weight: 100;
   margin-bottom: 10%;
 }
 
+.caution .list{
+  width: 80%;
+  margin: 5% auto;
+  line-height: 30px;
+}
 .caution .list h3 {
-  margin-top: 3%;
   font-size: 1.3em
 }
 
-.caution .list .listAll {
-  font-family: maitree;
-  font-weight: 100;
-  width: 90%;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  transform: translateY(-10%);
-  color: #fff;
-  line-height: 35px;
-}
+
 
 
 footer {
@@ -619,6 +618,7 @@ footer {
   background: #fff url(../img/btn_top.png) no-repeat center center;
   transition: all .3s ease;
   text-indent: -9999px;
+  box-shadow: 0px 4px 4px;
 }
 
 @media screen and (max-width:1400px) {
@@ -635,23 +635,19 @@ footer {
   }
 
   .m_box .m_inner {
-    max-width: 1024px;
-    transition: .2s linear;
-  }
-
-  .f_inner {
     max-width: 1200px;
     transition: .2s linear;
   }
 
-  .f_inner .f_1st .f_menu {
-    font-family: kopubBatang_bold;
-    width: 60%;
+  .f_inner {
+    max-width: 1024px;
+    transition: .2s linear;
   }
 
-  .btnTop {
-    right: 20px;
+  .f_inner .f_1st .f_menu {
+    width: 65%;
   }
+
 }
 
 @media screen and (max-width:1200px) {
@@ -662,12 +658,9 @@ footer {
   .h_inner .menu {
     width: 45%;
   }
-
   .m_box .m_inner {
-    max-width: 767px;
+    max-width: 1024px;
   }
-
-
   .a_inner {
     max-width: 767px;
   }
@@ -678,15 +671,15 @@ footer {
   }
 
   .f_inner {
-    max-width: 1024px;
+    max-width: 767px;
   }
 
   .f_inner .f_1st .f_menu {
-    width: 65%;
+    font-size: .9rem;
   }
 
-  .btnTop {
-    top: -80px;
+  .f_inner .f_1st .f_menu ul li {
+    margin: 0 3%;
   }
 
 }
@@ -711,6 +704,9 @@ footer {
     width: 65px;
     height: 65px;
   }
+  .m_box .m_inner {
+    max-width: 767px;
+  }
 
   .a_inner {
     width: 90%;
@@ -719,7 +715,11 @@ footer {
   .a_inner .box2 {
     font-size: .9rem;
   }
-
+  .caution .list{
+    width: 90%;
+    font-size: .9rem;
+  }
+  
   .f_inner {
     max-width: 767px;
   }
@@ -802,6 +802,9 @@ footer {
   font-size: .9rem;
   line-height: 23px;
 }
+.caution .list{
+  font-size: .8rem;
+}
 
   .f_inner {
     width: 90%;
@@ -855,7 +858,7 @@ footer {
 
   .btnTop {
     right: 20px;
-    top: -100px;
+    top: -60px;
     width: 50px;
     height: 50px;
   }
@@ -902,6 +905,7 @@ footer {
   /* 세로 */
   .a_inner .title h2 {
     font-size: 1.1rem;
+    margin: 10% 0;
   }
 
   .a_inner .box1 {
@@ -912,6 +916,10 @@ footer {
     width: 45%;
     margin: auto;
   }
+  .a_inner .box1 .text p {
+    font-size: 1.1rem;
+    margin: 7% 0;
+  }
 
   .a_inner .box1 figure img{
   width: 70%;
@@ -919,7 +927,8 @@ footer {
 }
 
   .a_inner .box1 .text {
-    margin: 3% 0;
+    width: 100%;
+    margin: 4% 0;
   }
   .a_inner .box2{
     margin: 10% 0;
@@ -928,11 +937,20 @@ footer {
     font-size: .8rem;
     line-height: 20px;
   }
+  .caution{
+    display: none;
+  }
 
 }
 
 @media screen and (max-width:450px) {
-
+  .h_inner h1 a img {
+    width: 80%;
+  }
+  .openmenu ul li {
+    font-size: 1.5rem;
+    line-height: 60px;
+}
   .f_inner .f_1st .flogo img {
     margin-left: 25%;
   }

@@ -9,22 +9,45 @@
     <script src="./script/CalendarPicker.js"></script>
 </head>
 <body>
-    <header>
-        <div class="h_inner">
-            <h1>
-                <a href="./index.html">
-                    <img src="./img/logo.svg" alt="logo">
-                    <span>수풍석뮤지엄</span>
-                </a>
-            </h1>
-            <ul class="menu">
+    <div class="openbox">
+        <div class="site">
+            <div class="circle circle--1"></div>
+            <div class="circle circle--2"></div>
+        </div>
+        <div class="openmenu">
+            <div class="black"></div>
+            <ul>
                 <li><a href="./sub1.html">박물관소개</a></li>
                 <li><a href="./sub3.html">공지사항</a></li>
                 <li><a href="./sub4.html">ITAMI JUN</a></li>
-                <li><button type="button" onclick="location.href='sub5.html'">예약하기</button></li>
+                <li><a href="./sub5.html">예약하기</a></li>
             </ul>
         </div>
-    </header>
+    </div>
+    <main>
+        <header>
+            <div class="h_inner">
+                <h1>
+                    <a href="./index.html">
+                        <img src="./img/h1Logo_b.png" alt="logo">
+                        <!--  <img src="./img/logo_w.png" alt="logo">  -->
+                        <span>수풍석뮤지엄</span>
+                    </a>
+                </h1>
+                <ul class="menu">
+                    <li><a href="./sub1.html">박물관소개</a></li>
+                    <li><a href="./sub3.html">공지사항</a></li>
+                    <li><a href="./sub4.html">ITAMI JUN</a></li>
+                    <li><button type="button" onclick="location.href='sub5.html'">예약하기</button></li>
+                </ul>
+
+                <div id="nav-icon4">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
         <main>
         <section class="mainbg">
             <h2 hidden>mainBg</h2>
@@ -37,8 +60,8 @@
             <figure>
                 <img src="./img/sub5_Bg.png" alt="s5_Bg">
             </figure>
-        </section>
-        <section class="con1">
+        
+        <div class="con1">
             <div class="title">
                 <h2>예약일 선택</h2>
             </div>
@@ -58,8 +81,8 @@
                     </h4>
                 </div>
             </div>
-        </section>
-        <section class="con2">
+        </div>
+        <div class="con2">
             <h2 hidden>con2</h2>
             <div class="numberCont">
                 <div class="s_title">
@@ -145,7 +168,8 @@
                     총 금액 : <strong>30,000</strong>원
                 </p>
             </div>
-        </section>
+        </div>
+    </section>
             <div class="centerBtn">
             <button type="button">
                <strong>예약하기</strong>

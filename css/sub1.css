@@ -338,12 +338,10 @@ header .h_inner {
 
 .m_box .m_inner ul .c:hover {
   color: #fff;
-  transition: .2s linear;
 }
 
 .m_box .m_inner ul .b:hover {
   color: #fff;
-  transition: .2s linear;
 }
 /* 반응형 버튼 */
 .m_box .m_inner .mbtn {
@@ -664,12 +662,13 @@ footer {
   background: #fff url(../img/btn_top.png) no-repeat center center;
   transition: all .3s ease;
   text-indent: -9999px;
+  box-shadow: 0px 4px 4px;
 }
 
 @media screen and (max-width:1400px) {
 
   header .h_inner {
-    max-width: 1024px;
+    max-width: 1200px;
     transition: .2s linear;
   }
 
@@ -680,7 +679,7 @@ footer {
   }
 
   .m_box .m_inner {
-    max-width: 1024px;
+    max-width: 1200px;
     transition: .2s linear;
   }
 
@@ -698,27 +697,14 @@ footer {
 
 @media screen and (max-width:1200px) {
   header .h_inner {
-    max-width: 767px;
+    max-width: 1024px;
   }
 
   .h_inner .menu {
-    width: 50%;
-    margin-bottom: 1%;
+    width: 45%;
   }
-
-  .h_inner .menu>li {
-    font-size: .95rem;
-    margin-top: 25px;
-  }
-
-  .h_inner button {
-    font-size: .8rem;
-    width: 65px;
-    height: 65px;
-  }
-
   .m_box .m_inner {
-    max-width: 767px;
+    max-width: 1024px;
   }
 
   .con1_inner .title h2 {
@@ -786,6 +772,29 @@ footer {
 }
 
 @media screen and (max-width:1024px) {
+  header .h_inner {
+    max-width: 767px;
+  }
+
+  .h_inner .menu {
+    width: 50%;
+    margin-bottom: 1%;
+  }
+
+  .h_inner .menu>li {
+    font-size: .95rem;
+    margin-top: 25px;
+  }
+
+  .h_inner button {
+    font-size: .8rem;
+    width: 65px;
+    height: 65px;
+  }
+
+  .m_box .m_inner {
+    max-width: 767px;
+  }
   .con1_inner {
     width: 90%;
   }
@@ -1009,7 +1018,13 @@ footer {
 }
 
 @media screen and (max-width:450px) {
-
+  .h_inner h1 a img {
+    width: 80%;
+  }
+  .openmenu ul li {
+    font-size: 1.5rem;
+    line-height: 60px;
+} 
   .btnTop {
     right: 25px;
     top: 15px;

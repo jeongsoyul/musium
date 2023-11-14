@@ -978,6 +978,7 @@ footer {
   background: #fff url(../img/btn_top.png) no-repeat center center;
   transition: all .3s ease;
   text-indent: -9999px;
+  box-shadow: 0px 4px 4px;
 }
 
 
@@ -1406,7 +1407,6 @@ footer {
     margin: 0 3%;
   }
   .btnTop {
-    top: -100px;
     right: 30px;
   }
 }
@@ -1735,6 +1735,7 @@ footer {
 
   .a_inner .allbox .textbox figure:nth-of-type(2) {
     margin-top: 0%;
+    right: 0;
   }
 
   .c_inner .all {
@@ -1828,15 +1829,6 @@ footer {
 }
 
 
-@media screen and (max-width:472px){
-  .musium .mbox .Bbox span {
-    padding: 10px;
-    top: 0;
-    left: 0;
-    font-size: .8rem;
-    line-height: 26px;
-    }
-}
 @media screen and (max-width:450px) {
   .h_inner h1 a img{
     width: 80%;
@@ -2013,6 +2005,6 @@ footer {
     display: none;
   }
   .musium .mbox .Bbox span {
-    padding: 5px;
+    line-height: 17px;
   }
 }
