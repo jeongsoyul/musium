@@ -142,7 +142,6 @@ header .h_inner {
 #nav-icon4 {
   width: 45px;
   height: 32px;
-  margin-right: 2%;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -1021,6 +1020,19 @@ footer {
   .h_inner h1 a img {
     width: 80%;
   }
+  /* #nav-icon4 span {
+    width: 38px;
+    height: 4px;
+  }
+  #nav-icon4 span:nth-child(1){
+    top: 4px;
+  }
+  #nav-icon4 span:nth-child(2){
+    top: 14px;
+  }
+  #nav-icon4 span:nth-child(3){
+    top: 24px;
+  } */
   .openmenu ul li {
     font-size: 1.5rem;
     line-height: 60px;
@@ -1031,6 +1043,7 @@ footer {
     width: 35px;
     height: 35px;
     border-radius: 0;
+    box-shadow:none;
   }
 
   .f_inner .f_1st .flogo img {

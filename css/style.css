@@ -28,6 +28,7 @@
 }
 *{
   scroll-behavior: smooth;
+  user-select: none;
 }
 
 main {
@@ -141,7 +142,6 @@ header .h_inner {
 #nav-icon4 {
   width: 45px;
   height: 32px;
-  margin-right: 2%;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -1833,6 +1833,7 @@ footer {
   .h_inner h1 a img{
     width: 80%;
   }
+
   .openmenu ul li{
     font-size: 1.5rem;
     line-height: 60px;
@@ -1843,6 +1844,9 @@ footer {
    .mainS .swiper-button-prev {
     top: 35%;
    } 
+   .mainbg .text{
+     display: none;
+   }
   .art .title h2 {
     font-size: .95rem;
   }
@@ -1976,6 +1980,7 @@ footer {
     width: 35px;
     height: 35px;
     border-radius: 0;
+    box-shadow:none;
   }
 
 }
@@ -1995,16 +2000,29 @@ footer {
     font-size: .7rem;
     line-height: 20px;
   } 
-  
-  .mainbg .text {
-    top: 55%;
-    font-size: 3.5vw;
-
-  }
   .itamiText {
     display: none;
   }
-  .musium .mbox .Bbox span {
-    line-height: 17px;
+  .musium .mbox .Bbox{
+    display: none;
   }
+  .f_inner .f_1st .f_menu ul li {
+    font-size: .625rem;
+  }
+  .f_inner .copy span {
+    font-size: .65rem;
+    line-height: 45px;
+}
+
+}
+
+@media screen and (max-width:350px){
+  .f_inner .f_1st .f_menu ul {
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .f_inner .copy span {
+    line-height: 18px;
+}
 }
